@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "msg.user";
+
+package userservice;
+
+// Handles all things user
+service UserService {
+  // Sends a greeting
+  rpc login (LoginRequest) returns (LoginResponse) {}
+}
+
+message LoginRequest {
+  
+}
+
+message LoginResponse {
+
+}
