@@ -1,11 +1,12 @@
 syntax = "proto3";
 
-option java_package = "msg.user";
+option java_package = "msg.userhandler";
+option java_multiple_files = true;
 
-package userservice;
+package userhandler;
 
 // Handles all things user
-service UserService {
+service UserHandler {
   // Sends a greeting
   rpc login (LoginRequest) returns (LoginResponse) {}
 }
@@ -15,5 +16,5 @@ message LoginRequest {
 }
 
 message LoginResponse {
-
+	bytes jwt = 1;
 }
