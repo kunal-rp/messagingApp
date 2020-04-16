@@ -1,7 +1,10 @@
-syntax = "proto3";
+syntax = "proto2";
 
 option java_package = "msg.userhandler";
 option java_multiple_files = true;
+
+import "user/user_details.proto";
+
 
 package userhandler;
 
@@ -12,9 +15,12 @@ service UserHandler {
 }
 
 message LoginRequest {
-  
+	oneof token{
+		string google_token = 1;
+		string facebook_token = 2;
+	}
 }
 
-message LoginResponse {
-	bytes jwt = 1;
+message LoginResponse{
 }
+

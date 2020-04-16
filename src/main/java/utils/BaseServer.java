@@ -42,6 +42,13 @@ public class BaseServer{
     logger = Logger.getLogger(serviceName);
   }
 
+   public BaseServer(int port, io.grpc.ServerServiceDefinition serviceImplemenation, String serviceName){
+    this.port = port;
+    this.serviceName = serviceName;
+    server = ServerBuilder.forPort(port).addService(serviceImplemenation).build();
+    logger = Logger.getLogger(serviceName);
+  }
+
   /** Start serving requests. */
   public void start() throws IOException {
     server.start();

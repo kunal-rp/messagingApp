@@ -1,4 +1,6 @@
-Test messageing app with grpc services 
+This is the base gRPC project w/ base authenticate to copy and use in future projects
+
+Given premise : Test messageing app with grpc services 
 
 user service:
 -handle verifying and login of user through jwt

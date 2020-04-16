@@ -1,0 +1,23 @@
+//services for testing purposes
+
+syntax = "proto2";
+
+option java_package = "msg.testing";
+option java_multiple_files = true;
+
+package testinghandler;
+
+import "user/user_details.proto";
+
+
+service TestingHandler {
+  rpc validateJwt (SampleRequest) returns (SampleResponse) {}
+}
+
+message SampleRequest {
+}
+
+message SampleResponse {
+	optional userhandler.UserDetails user_details = 1;
+}
+

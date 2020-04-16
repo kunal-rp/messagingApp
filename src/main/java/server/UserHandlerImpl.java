@@ -1,10 +1,12 @@
 package msg.server;
 
+import io.grpc.Context;
 import msg.userhandler.LoginRequest;
 import msg.userhandler.LoginResponse;
 import msg.userhandler.UserHandlerGrpc.UserHandlerImplBase;
 import com.google.protobuf.ByteString;
 import io.grpc.stub.StreamObserver;
+import utils.*;
 
 /**
    * Our implementation of UserData service.
@@ -17,8 +19,6 @@ import io.grpc.stub.StreamObserver;
 
     @Override
     public void login(LoginRequest request, StreamObserver<LoginResponse> responseObserver){
-      System.out.println("get uesr data called");
-      responseObserver.onNext(LoginResponse.newBuilder().setJwt(ByteString.copyFrom("test".getBytes())).build());
-      responseObserver.onCompleted();
+        responseObserver.onNext(LoginResponse.getDefaultInstance());
     }
   }
