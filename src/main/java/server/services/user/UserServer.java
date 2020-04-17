@@ -1,8 +1,8 @@
-package msg.server;
+package msg.services.user;
 
 import io.grpc.ServerServiceDefinition;
 import io.grpc.ServerInterceptors;
-import msg.server.UserHandlerImpl;
+import msg.services.user.UserHandlerImpl;
 import utils.*;
 
 public class UserServer {

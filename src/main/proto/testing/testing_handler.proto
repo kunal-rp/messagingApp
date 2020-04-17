@@ -7,11 +7,12 @@ option java_multiple_files = true;
 
 package testinghandler;
 
-import "user/user_details.proto";
+import "user/user.proto";
 
 
 service TestingHandler {
   rpc validateJwt (SampleRequest) returns (SampleResponse) {}
+  rpc getUser(SampleRequest) returns (SampleResponse) {}
 }
 
 message SampleRequest {
@@ -19,5 +20,6 @@ message SampleRequest {
 
 message SampleResponse {
 	optional userhandler.UserDetails user_details = 1;
+	optional userhandler.User user = 2;
 }
 

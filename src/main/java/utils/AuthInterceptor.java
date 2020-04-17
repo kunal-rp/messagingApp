@@ -11,7 +11,7 @@ import io.grpc.Status;
 import com.google.protobuf.InvalidProtocolBufferException;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Claims;
-import msg.userhandler.UserDetails;
+import msg.user.UserDetails;
 import com.google.protobuf.ByteString;
 import java.util.Base64;
 

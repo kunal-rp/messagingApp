@@ -1,13 +1,21 @@
 syntax = "proto2";
 
-option java_package = "msg.userhandler";
+option java_package = "msg.user";
 option java_multiple_files = true;
 
 package userhandler;
 
-// stored user details parsed from JWT created on login and passed through each request 
+// generic user protos
+
+
+message User{
+	required int32 user_id=1;
+	required string email = 2;
+	optional string profile_image_url = 3;
+}
+
 message UserDetails{
-	optional int32 user_id = 1;
+	required int32 user_id = 1;
 	optional  Permissions user_permissions = 2;
 }
 

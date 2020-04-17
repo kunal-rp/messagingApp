@@ -10,7 +10,7 @@ import org.apache.commons.lang3.time.DateUtils;
 import io.grpc.Metadata;
 import com.google.protobuf.ByteString;
 import java.lang.IllegalArgumentException;
-import msg.userhandler.UserDetails;
+import msg.user.UserDetails;
 import java.util.Base64;
 
 
