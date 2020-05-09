@@ -1,0 +1,26 @@
+syntax = "proto2";
+
+package login;
+
+// Handles all things user
+service Login {
+  // Sends a greeting
+  rpc login (LoginRequest) returns (LoginResponse) {}
+}
+
+message LoginRequest {
+	oneof token{
+		string google_token = 1;
+		//string facebook_token = 2;
+	}
+}
+
+message LoginResponse{
+	enum Result{
+		SUCSESS = 0;
+		FAIL = 1;
+	}
+	required Result login_result = 1;
+	optional string jwt_token = 2;
+}
+

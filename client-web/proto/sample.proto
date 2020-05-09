@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package sample;
+
+// Handles all things user
+service Sample {
+  // Sends a greeting
+  rpc sampleCall (SampleRequest) returns (SampleResponse) {}
+}
+
+message SampleRequest {
+}
+
+message SampleResponse{
+	optional UserDetails userDetails = 1;
+}
+
