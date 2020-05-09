@@ -14,7 +14,7 @@ import org.apache.commons.codec.binary.StringUtils;
 public class MainSSOAuthService implements SSOAuthService {
 
 	private final GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(new NetHttpTransport(), new JacksonFactory())
-    .setAudience(Collections.singletonList("436041114033-g9veoeqo9cvqlvia27t30oibijah35mf.apps.googleusercontent.com"))
+    .setAudience(Collections.singletonList(Secrets.SSO_GOOGLE_CLIENT_ID))
     .build();
 
 

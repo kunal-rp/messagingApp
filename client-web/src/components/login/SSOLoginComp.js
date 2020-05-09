@@ -6,6 +6,7 @@ import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
 import {loginWithToken, sampleCall} from '../../client';
 import { Redirect } from 'react-router-dom'
+import {GOOGLE_CLIENT_ID} from './Secret'
 
 class SSOLoginComp extends React.Component{
 
@@ -33,7 +34,7 @@ class SSOLoginComp extends React.Component{
 			<Grid container spacing={3}>
 				<Grid item xs={12}>
 					<GoogleLogin
-						clientId="436041114033-g9veoeqo9cvqlvia27t30oibijah35mf.apps.googleusercontent.com"
+						clientId={GOOGLE_CLIENT_ID}
 						buttonText="Login with Google"
 						onSuccess={res => this.loginWithGoogle(res)}
 						/>
