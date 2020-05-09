@@ -1,0 +1,26 @@
+syntax = "proto2";
+
+option java_package = "msg.user";
+option java_multiple_files = true;
+
+package user;
+
+// generic user protos
+
+message User{
+	required string user_id=1;
+	required string email = 2;
+	optional string profile_image_url = 3;
+	optional string name = 4;
+}
+
+message UserDetails{
+	required string user_id = 1;
+	optional  Permissions user_permissions = 2;
+}
+
+// specify user permissions and roles 
+message Permissions{
+
+}
+

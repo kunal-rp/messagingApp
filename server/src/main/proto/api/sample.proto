@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+option java_package = "msg.api.sample";
+option java_multiple_files = true;
+
+package sample;
+
+import "user/user.proto";
+
+// Handles all things user
+service Sample {
+  // Sends a greeting
+  rpc sampleCall (SampleRequest) returns (SampleResponse) {}
+}
+
+message SampleRequest {
+}
+
+message SampleResponse{
+	optional user.UserDetails userDetails = 1;
+}
+

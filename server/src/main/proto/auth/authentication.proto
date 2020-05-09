@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+option java_package = "msg.auth";
+option java_multiple_files = true;
+
+package auth;
+
+import "user/user.proto";
+
+message AuthenticationResult {
+	enum Status{
+		SUCCESS = 0;
+		FAIL = 1;
+	}
+	required Status status = 1;
+	optional user.User user = 2;
+}
+
